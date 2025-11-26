@@ -1,0 +1,136 @@
+Backpack Problem Solution Analysis
+Each item can only be taken once (no duplicates)
+==================================================
+
+1. 7-slot backpack analysis:
+❌ No valid solutions found for 7-slot backpack
+
+2. Variant 4 (9-slot backpack) analysis:
+Found 127 valid combinations
+   Combination 1: ['c', 'f', 'k', 'm', 's', 't'] | Size: 9/9 | Score: 40
+   Combination 2: ['d', 'f', 'k', 'm', 'r', 't'] | Size: 9/9 | Score: 30
+   Combination 3: ['d', 'f', 'k', 'r', 's', 't'] | Size: 9/9 | Score: 30
+   Combination 4: ['c', 'd', 'f', 'k', 'r', 't'] | Size: 9/9 | Score: 30
+   Combination 5: ['f', 'k', 'm', 'p', 's', 't'] | Size: 9/9 | Score: 30
+   Combination 6: ['c', 'f', 'k', 'm', 'p', 't'] | Size: 9/9 | Score: 30
+   Combination 7: ['c', 'f', 'k', 'p', 's', 't'] | Size: 9/9 | Score: 30
+   Combination 8: ['a', 'f', 'k', 'm', 's', 't'] | Size: 9/9 | Score: 30
+   Combination 9: ['a', 'c', 'f', 'k', 'm', 't'] | Size: 9/9 | Score: 30
+   Combination 10: ['a', 'c', 'f', 'k', 's', 't'] | Size: 9/9 | Score: 30
+   Combination 11: ['c', 'd', 'k', 'm', 's', 't'] | Size: 9/9 | Score: 30
+   Combination 12: ['c', 'd', 'f', 'm', 's', 't'] | Size: 9/9 | Score: 30
+   Combination 13: ['d', 'f', 'i', 'k', 'm', 's', 't'] | Size: 9/9 | Score: 30
+   Combination 14: ['c', 'd', 'f', 'i', 'k', 'm', 't'] | Size: 9/9 | Score: 30
+   Combination 15: ['c', 'd', 'f', 'i', 'k', 's', 't'] | Size: 9/9 | Score: 30
+   Combination 16: ['k', 'm', 'r', 's', 't'] | Size: 9/9 | Score: 20
+   Combination 17: ['c', 'k', 'm', 'r', 't'] | Size: 9/9 | Score: 20
+   Combination 18: ['f', 'm', 'r', 's', 't'] | Size: 9/9 | Score: 20
+   Combination 19: ['c', 'f', 'm', 'r', 't'] | Size: 9/9 | Score: 20
+   Combination 20: ['c', 'k', 'r', 's', 't'] | Size: 9/9 | Score: 20
+   Combination 21: ['c', 'f', 'r', 's', 't'] | Size: 9/9 | Score: 20
+   Combination 22: ['d', 'f', 'k', 'p', 'r', 't'] | Size: 9/9 | Score: 20
+   Combination 23: ['a', 'd', 'f', 'k', 'r', 't'] | Size: 9/9 | Score: 20
+   Combination 24: ['f', 'i', 'k', 'm', 'r', 't'] | Size: 9/9 | Score: 20
+   Combination 25: ['f', 'i', 'k', 'r', 's', 't'] | Size: 9/9 | Score: 20
+   Combination 26: ['c', 'f', 'i', 'k', 'r', 't'] | Size: 9/9 | Score: 20
+   Combination 27: ['a', 'f', 'k', 'm', 'p', 't'] | Size: 9/9 | Score: 20
+   Combination 28: ['a', 'f', 'k', 'p', 's', 't'] | Size: 9/9 | Score: 20
+   Combination 29: ['a', 'c', 'f', 'k', 'p', 't'] | Size: 9/9 | Score: 20
+   Combination 30: ['d', 'k', 'm', 'p', 's', 't'] | Size: 9/9 | Score: 20
+   Combination 31: ['c', 'd', 'k', 'm', 'p', 't'] | Size: 9/9 | Score: 20
+   Combination 32: ['d', 'f', 'm', 'p', 's', 't'] | Size: 9/9 | Score: 20
+   Combination 33: ['c', 'd', 'f', 'm', 'p', 't'] | Size: 9/9 | Score: 20
+   Combination 34: ['c', 'd', 'k', 'p', 's', 't'] | Size: 9/9 | Score: 20
+   Combination 35: ['c', 'd', 'f', 'p', 's', 't'] | Size: 9/9 | Score: 20
+   Combination 36: ['a', 'd', 'k', 'm', 's', 't'] | Size: 9/9 | Score: 20
+   Combination 37: ['a', 'c', 'd', 'k', 'm', 't'] | Size: 9/9 | Score: 20
+   Combination 38: ['a', 'd', 'f', 'm', 's', 't'] | Size: 9/9 | Score: 20
+   Combination 39: ['a', 'c', 'd', 'f', 'm', 't'] | Size: 9/9 | Score: 20
+   Combination 40: ['a', 'c', 'd', 'k', 's', 't'] | Size: 9/9 | Score: 20
+   Combination 41: ['a', 'c', 'd', 'f', 's', 't'] | Size: 9/9 | Score: 20
+   Combination 42: ['c', 'i', 'k', 'm', 's', 't'] | Size: 9/9 | Score: 20
+   Combination 43: ['c', 'f', 'i', 'm', 's', 't'] | Size: 9/9 | Score: 20
+   Combination 44: ['d', 'f', 'k', 'm', 't', 'x'] | Size: 9/9 | Score: 20
+   Combination 45: ['d', 'f', 'k', 'm', 's', 't'] | Size: 8/9 | Score: 20
+   Combination 46: ['c', 'd', 'f', 'k', 'm', 't'] | Size: 8/9 | Score: 20
+   Combination 47: ['d', 'f', 'k', 's', 't', 'x'] | Size: 9/9 | Score: 20
+   Combination 48: ['c', 'd', 'f', 'k', 't', 'x'] | Size: 9/9 | Score: 20
+   Combination 49: ['c', 'd', 'f', 'k', 's', 't'] | Size: 8/9 | Score: 20
+   Combination 50: ['d', 'f', 'i', 'k', 'm', 'p', 't'] | Size: 9/9 | Score: 20
+   Combination 51: ['d', 'f', 'i', 'k', 'p', 's', 't'] | Size: 9/9 | Score: 20
+   Combination 52: ['c', 'd', 'f', 'i', 'k', 'p', 't'] | Size: 9/9 | Score: 20
+   Combination 53: ['a', 'd', 'f', 'i', 'k', 'm', 't'] | Size: 9/9 | Score: 20
+   Combination 54: ['a', 'd', 'f', 'i', 'k', 's', 't'] | Size: 9/9 | Score: 20
+   Combination 55: ['a', 'c', 'd', 'f', 'i', 'k', 't'] | Size: 9/9 | Score: 20
+   Combination 56: ['k', 'm', 'p', 'r', 't'] | Size: 9/9 | Score: 10
+   Combination 57: ['f', 'm', 'p', 'r', 't'] | Size: 9/9 | Score: 10
+   Combination 58: ['k', 'p', 'r', 's', 't'] | Size: 9/9 | Score: 10
+   Combination 59: ['c', 'k', 'p', 'r', 't'] | Size: 9/9 | Score: 10
+   Combination 60: ['f', 'p', 'r', 's', 't'] | Size: 9/9 | Score: 10
+   Combination 61: ['c', 'f', 'p', 'r', 't'] | Size: 9/9 | Score: 10
+   Combination 62: ['a', 'k', 'm', 'r', 't'] | Size: 9/9 | Score: 10
+   Combination 63: ['a', 'f', 'm', 'r', 't'] | Size: 9/9 | Score: 10
+   Combination 64: ['a', 'k', 'r', 's', 't'] | Size: 9/9 | Score: 10
+   Combination 65: ['a', 'c', 'k', 'r', 't'] | Size: 9/9 | Score: 10
+   Combination 66: ['a', 'f', 'r', 's', 't'] | Size: 9/9 | Score: 10
+   Combination 67: ['a', 'c', 'f', 'r', 't'] | Size: 9/9 | Score: 10
+   Combination 68: ['f', 'k', 'm', 'r', 't'] | Size: 8/9 | Score: 10
+   Combination 69: ['d', 'm', 'r', 's', 't'] | Size: 9/9 | Score: 10
+   Combination 70: ['c', 'd', 'm', 'r', 't'] | Size: 9/9 | Score: 10
+   Combination 71: ['f', 'k', 'r', 't', 'x'] | Size: 9/9 | Score: 10
+   Combination 72: ['f', 'k', 'r', 's', 't'] | Size: 8/9 | Score: 10
+   Combination 73: ['c', 'f', 'k', 'r', 't'] | Size: 8/9 | Score: 10
+   Combination 74: ['c', 'd', 'r', 's', 't'] | Size: 9/9 | Score: 10
+   Combination 75: ['c', 'm', 'p', 's', 't'] | Size: 9/9 | Score: 10
+   Combination 76: ['a', 'c', 'm', 's', 't'] | Size: 9/9 | Score: 10
+   Combination 77: ['k', 'm', 's', 't', 'x'] | Size: 9/9 | Score: 10
+   Combination 78: ['c', 'k', 'm', 't', 'x'] | Size: 9/9 | Score: 10
+   Combination 79: ['c', 'k', 'm', 's', 't'] | Size: 8/9 | Score: 10
+   Combination 80: ['f', 'm', 's', 't', 'x'] | Size: 9/9 | Score: 10
+   Combination 81: ['c', 'f', 'm', 't', 'x'] | Size: 9/9 | Score: 10
+   Combination 82: ['c', 'f', 'm', 's', 't'] | Size: 8/9 | Score: 10
+   Combination 83: ['c', 'k', 's', 't', 'x'] | Size: 9/9 | Score: 10
+   Combination 84: ['c', 'f', 's', 't', 'x'] | Size: 9/9 | Score: 10
+   Combination 85: ['f', 'i', 'k', 'p', 'r', 't'] | Size: 9/9 | Score: 10
+   Combination 86: ['a', 'f', 'i', 'k', 'r', 't'] | Size: 9/9 | Score: 10
+   Combination 87: ['d', 'i', 'k', 'm', 'r', 't'] | Size: 9/9 | Score: 10
+   Combination 88: ['d', 'f', 'i', 'm', 'r', 't'] | Size: 9/9 | Score: 10
+   Combination 89: ['d', 'i', 'k', 'r', 's', 't'] | Size: 9/9 | Score: 10
+   Combination 90: ['c', 'd', 'i', 'k', 'r', 't'] | Size: 9/9 | Score: 10
+   Combination 91: ['d', 'f', 'i', 'r', 's', 't'] | Size: 9/9 | Score: 10
+   Combination 92: ['c', 'd', 'f', 'i', 'r', 't'] | Size: 9/9 | Score: 10
+   Combination 93: ['a', 'd', 'k', 'm', 'p', 't'] | Size: 9/9 | Score: 10
+   Combination 94: ['a', 'd', 'f', 'm', 'p', 't'] | Size: 9/9 | Score: 10
+   Combination 95: ['a', 'd', 'k', 'p', 's', 't'] | Size: 9/9 | Score: 10
+   Combination 96: ['a', 'c', 'd', 'k', 'p', 't'] | Size: 9/9 | Score: 10
+   Combination 97: ['a', 'd', 'f', 'p', 's', 't'] | Size: 9/9 | Score: 10
+   Combination 98: ['a', 'c', 'd', 'f', 'p', 't'] | Size: 9/9 | Score: 10
+   Combination 99: ['i', 'k', 'm', 'p', 's', 't'] | Size: 9/9 | Score: 10
+   Combination 100: ['c', 'i', 'k', 'm', 'p', 't'] | Size: 9/9 | Score: 10
+   Combination 101: ['f', 'i', 'm', 'p', 's', 't'] | Size: 9/9 | Score: 10
+   Combination 102: ['c', 'f', 'i', 'm', 'p', 't'] | Size: 9/9 | Score: 10
+   Combination 103: ['d', 'f', 'k', 'm', 'p', 't'] | Size: 8/9 | Score: 10
+   Combination 104: ['c', 'i', 'k', 'p', 's', 't'] | Size: 9/9 | Score: 10
+   Combination 105: ['c', 'f', 'i', 'p', 's', 't'] | Size: 9/9 | Score: 10
+   Combination 106: ['d', 'f', 'k', 'p', 't', 'x'] | Size: 9/9 | Score: 10
+   Combination 107: ['d', 'f', 'k', 'p', 's', 't'] | Size: 8/9 | Score: 10
+   Combination 108: ['c', 'd', 'f', 'k', 'p', 't'] | Size: 8/9 | Score: 10
+   Combination 109: ['a', 'i', 'k', 'm', 's', 't'] | Size: 9/9 | Score: 10
+   Combination 110: ['a', 'c', 'i', 'k', 'm', 't'] | Size: 9/9 | Score: 10
+   Combination 111: ['a', 'f', 'i', 'm', 's', 't'] | Size: 9/9 | Score: 10
+   Combination 112: ['a', 'c', 'f', 'i', 'm', 't'] | Size: 9/9 | Score: 10
+   Combination 113: ['a', 'd', 'f', 'k', 'm', 't'] | Size: 8/9 | Score: 10
+   Combination 114: ['a', 'c', 'i', 'k', 's', 't'] | Size: 9/9 | Score: 10
+   Combination 115: ['a', 'c', 'f', 'i', 's', 't'] | Size: 9/9 | Score: 10
+   Combination 116: ['a', 'd', 'f', 'k', 't', 'x'] | Size: 9/9 | Score: 10
+   Combination 117: ['a', 'd', 'f', 'k', 's', 't'] | Size: 8/9 | Score: 10
+   Combination 118: ['a', 'c', 'd', 'f', 'k', 't'] | Size: 8/9 | Score: 10
+   Combination 119: ['f', 'i', 'k', 'm', 't', 'x'] | Size: 9/9 | Score: 10
+   Combination 120: ['f', 'i', 'k', 'm', 's', 't'] | Size: 8/9 | Score: 10
+   Combination 121: ['c', 'f', 'i', 'k', 'm', 't'] | Size: 8/9 | Score: 10
+   Combination 122: ['c', 'd', 'i', 'm', 's', 't'] | Size: 9/9 | Score: 10
+   Combination 123: ['c', 'd', 'f', 'k', 'm', 's'] | Size: 9/9 | Score: 10
+   Combination 124: ['f', 'i', 'k', 's', 't', 'x'] | Size: 9/9 | Score: 10
+   Combination 125: ['c', 'f', 'i', 'k', 't', 'x'] | Size: 9/9 | Score: 10
+   Combination 126: ['c', 'f', 'i', 'k', 's', 't'] | Size: 8/9 | Score: 10
+   Combination 127: ['a', 'd', 'f', 'i', 'k', 'p', 't'] | Size: 9/9 | Score: 10
