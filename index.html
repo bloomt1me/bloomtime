@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шагомер - Учёт шагов</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #1a1a2e);
+            color: white;
+            padding: 25px 30px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 2.2em;
+            margin-bottom: 8px;
+        }
+        .total-steps {
+            background: #f39c12;
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 40px;
+            margin-top: 12px;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .content {
+            padding: 30px;
+        }
+        .add-form {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 35px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: #333;
+        }
+        #my_label{
+            color:#764ba2;
+        }
+        input[type="number"], input[type="text"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1em;
+        }
+        button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102,126,234,0.4);
+        }
+        .records-section h2 {
+            color: #2c3e50;
+            border-left: 5px solid #764ba2;
+            padding-left: 15px;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 14px 12px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        th {
+            background: #2c3e50;
+            color: white;
+        }
+        tr:hover {
+            background: #f5f5f5;
+        }
+        .delete-btn {
+            background: #e74c3c;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            width: auto;
+        }
+        .delete-btn:hover {
+            background: #c0392b;
+        }
+        .empty-message {
+            text-align: center;
+            padding: 30px;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1> Шагомер | Учёт шагов</h1>
+            <p>Отслеживайте вашу активность день за днём</p>
+            <div class="total-steps">
+                 Суммарное количество шагов: <strong>{{ total_steps }}</strong>
+            </div>
+        </div>
+        <div class="content">
+            <div class="add-form">
+                <form method="POST" action="/">
+                    <div class="form-group">
+                        <label id="my_label"> Количество шагов:</label>
+                        <input type="number" name="steps" placeholder="Например: 8500" required min="0">
+                    </div>
+                    <div class="form-group">
+                        <label> Дата:</label>
+                        <input type="text" name="date" placeholder="ДД-ММ-ГГГГ" required>
+                    </div>
+                    <button type="submit"> Добавить запись</button>
+                </form>
+            </div>
+            <div class="records-section">
+                <h2> История шагов</h2>
+                {% if records %}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Дата</th>
+                            <th>Шаги</th>
+                            <th>Действие</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for record in records %}
+                        <tr>
+                            <td>{{ record.date }}</td>
+                            <td><strong>{{ record.steps }}</strong></td>
+                            <td>
+                                <form method="POST" action="/delete/{{ record.id }}" style="display:inline;">
+                                    <button type="submit" class="delete-btn" onclick="return confirm('Удалить запись?')">🗑 Удалить</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% else %}
+                <div class="empty-message">
+                    Пока нет ни одной записи. Добавьте первый результат!
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
